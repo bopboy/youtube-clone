@@ -9,7 +9,7 @@ const videoSchema = mongoose.Schema({
     category: { type: String },
     views: { type: Number, default: 0 },
     duration: { type: String },
-    thumbnal: { type: String }
+    thumbnail: { type: String }
 
 }, { timestamps: true })
 const Video = mongoose.model('Video', videoSchema)

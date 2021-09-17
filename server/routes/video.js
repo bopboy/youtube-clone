@@ -58,4 +58,10 @@ router.post('/uploadvideo', (req, res) => {
         res.status(200).json({ success: true })
     })
 })
+router.get('/getVideos', (req, res) => {
+    Video.find().populate('writer').exec((err, videos) => {
+        if (err) return res.status(400).send(err)
+        res.status(200).json({ success: true, videos })
+    })
+})
 module.exports = router
