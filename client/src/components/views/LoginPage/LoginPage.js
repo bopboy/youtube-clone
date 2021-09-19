@@ -90,7 +90,7 @@ function LoginPage(props) {
                   prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                   placeholder="Enter your email"
                   type="email"
-                  value={values.email}
+                  value={values.email && values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
@@ -128,11 +128,11 @@ function LoginPage(props) {
                 <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
                 <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
                   forgot password
-                  </a>
+                </a>
                 <div>
                   <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
                     Log in
-                </Button>
+                  </Button>
                 </div>
                 Or <a href="/register">register now!</a>
               </Form.Item>
