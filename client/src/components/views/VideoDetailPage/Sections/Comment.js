@@ -34,12 +34,13 @@ function Comment(props) {
             <hr />
             {props.commentsList && props.commentsList.map((comment, index) => (
                 (!comment.responseTo &&
-                    <>
+                    <div key={index}>
                         <SingleComment key={index} videoId={videoId} comment={comment} refreshFunction={props.refreshFunction} />
                         <ReplyComment commentsList={props.commentsList} parentCommentId={comment._id} videoId={videoId} refreshFunction={props.refreshFunction} />
-                    </>
+                    </div>
                 )
-            ))}
+            ))
+            }
             <form style={{ display: 'flex' }} onSubmit={onSubmit}>
                 <textarea
                     style={{ width: '100%', borderRadius: '5px' }}
@@ -50,7 +51,7 @@ function Comment(props) {
                 <br />
                 <button style={{ width: '20%', height: '52px' }} onClick={onSubmit}>Submit</button>
             </form>
-        </div>
+        </div >
     )
 }
 
